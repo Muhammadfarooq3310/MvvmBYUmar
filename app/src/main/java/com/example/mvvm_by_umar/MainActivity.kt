@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_by_umar.adapter.FectListAdapter
-import com.example.mvvm_by_umar.ads.AddsClass
+import com.example.mvvm_by_umar.ads.AdClass
 import com.example.mvvm_by_umar.databinding.ActivityMainBinding
 import com.example.mvvm_by_umar.model.FectModel
 import com.example.mvvm_by_umar.viewmodel.AdModel
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), FectListAdapter.ItemClickListener {
 
     private lateinit var nativeAd: NativeAd
 
-    private var objAds: AddsClass? = null
+    private var objAds: AdClass? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity(), FectListAdapter.ItemClickListener {
 
         adLoader.loadAd(AdRequest.Builder().build())
 
-        objAds = AddsClass(this)
-        objAds!!.load_Interstitial()
+        objAds = AdClass(this)
+        objAds!!.loadInterstitial()
 
         adViewModel.startTimer()
 
